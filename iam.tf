@@ -52,6 +52,6 @@ resource "aws_iam_policy_attachment" "test-attach" {
 }
 
 resource "aws_iam_instance_profile" "test_profile" {
-  name = "test_profile_for_ec2_s3_access"
+  name = "test_profile_for_ec2_s3_access1"
   role = aws_iam_role.ec2_role.name
 }

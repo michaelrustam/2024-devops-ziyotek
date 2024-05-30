@@ -1,10 +1,10 @@
 resource "aws_db_instance" "default0" {
   allocated_storage      = 10
-  db_name                = "ziyo-mr"
+  db_name                = "ziyomr"
   engine                 = "postgres"
   engine_version         = "12.15"
   instance_class         = "db.t3.micro"
-  username               = "ziyo_user-michaelrustam"
+  username               = "ziyousermichaelrustam"
   password               = aws_ssm_parameter.foo-mr.value
   parameter_group_name   = "default.postgres12"
   skip_final_snapshot    = true
@@ -15,7 +15,7 @@ resource "aws_db_instance" "default0" {
 
 resource "aws_db_subnet_group" "ziyo_subg07" {
   name       = "ziyo_sub_group-077"
-  subnet_ids = [aws_subnet.ziyo_subnet_public.id, aws_subnet.ziyo_subnet_private.id]
+  subnet_ids = [aws_subnet.ziyo_subnet_public.id, aws_subnet.ziyo_subnet_public_2.id, aws_subnet.ziyo_subnet_private.id]
 }
 
 resource "random_password" "password" {
